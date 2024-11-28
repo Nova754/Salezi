@@ -24,7 +24,7 @@ Nous allons vous accompagner durant tout le long de l'installation et de la pris
 Dans le terminal, on installe les dépendances avant de pouvoir exécuter le projet. Dans le dossier racine du projet **Salezi**, on exécute la commande suivante : 
 
 ```bash
-cd salezi
+cd Salezi
 npm install
 ```
 
@@ -32,7 +32,7 @@ npm install
 Dans le terminal, on va dans le dossier **Salezi** et on exécute la commande suivante :
 
 ```bash
-cd salezi
+cd Salezi
 npm run develop
 ```
 L'API sera disponible à l'adresse [http://localhost:1337](http://localhost:1337).
