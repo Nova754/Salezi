@@ -1,0 +1,67 @@
+{
+    "kind": "collectionType",
+    "collectionName": "products",
+    "info": {
+        "singularName": "product",
+        "pluralName": "products",
+        "displayName": "Product",
+        "description": ""
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "name": {
+            "type": "string",
+            "unique": true,
+            "required": true
+        },
+        "description": {
+            "type": "text",
+            "required": true,
+            "unique": true
+        },
+        "price": {
+            "type": "decimal",
+            "min": 0,
+            "required": true
+        },
+        "stock_quantity": {
+            "type": "integer",
+            "min": 0,
+            "required": true
+        },
+        "category": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "api::category.category",
+            "inversedBy": "products"
+        },
+        "Images": {
+            "type": "media",
+            "multiple": false,
+            "required": false,
+            "allowedTypes": [
+                "images",
+                "files"
+            ]
+        },
+        "reference": {
+            "type": "uid",
+            "targetField": "name"
+        },
+        "transactions": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::transaction.transaction",
+            "mappedBy": "product"
+        },
+        "seller": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "api::seller.seller",
+            "inversedBy": "products"
+        }
+    }
+}
